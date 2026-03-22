@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Measurements — Federica Dal Molin Atelier</title>
+    <meta name="description" content="How to take your measurements for a perfect made-to-measure garment. Step-by-step guide by Federica Dal Molin Atelier, Dubai.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #F5F0EB;
+            --color-warm-white: #FDFBF9;
+            --color-charcoal: #2C2C2C;
+            --color-soft-black: #1A1A1A;
+            --color-taupe: #A89B8C;
+            --color-gold: #C4A87C;
+            --color-gold-light: #D4BE9C;
+            --color-text: #3A3A3A;
+            --color-text-light: #6B6B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Montserrat', Helvetica, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-warm-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1rem 3rem;
+            background: rgba(253, 251, 249, 0.97);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--color-soft-black);
+            text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1px;
+            background: var(--color-gold);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--color-gold); }
+        .nav-links a.active::after { width: 100%; }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 24px; height: 1px;
+            background: var(--color-soft-black);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            padding: 10rem 3rem 5rem;
+            background: var(--color-soft-black);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center top, rgba(196,168,124,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-hero-label {
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.9s ease forwards;
+        }
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 300;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.9s 0.1s ease both;
+        }
+        .page-hero h1 em { font-style: italic; }
+        .page-hero-sub {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.55);
+            max-width: 520px;
+            margin: 0 auto;
+            animation: fadeUp 0.9s 0.2s ease both;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== INTRO NOTE ===== */
+        .intro-note {
+            background: var(--color-cream);
+            padding: 4rem 3rem;
+        }
+        .intro-note-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .intro-note-label {
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--color-taupe);
+            margin-bottom: 1rem;
+        }
+        .intro-note-heading {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 300;
+            color: var(--color-soft-black);
+            line-height: 1.3;
+        }
+        .intro-note-heading em { font-style: italic; }
+        .intro-note-text p {
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--color-text);
+            margin-bottom: 1.2rem;
+        }
+        .intro-note-tips {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-left: 2px solid var(--color-gold);
+            background: rgba(196,168,124,0.06);
+        }
+        .intro-note-tips p {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            margin-bottom: 0 !important;
+        }
+        .intro-note-tips strong {
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        /* ===== MEASUREMENTS STEPS ===== */
+        .steps-section {
+            background: var(--color-warm-white);
+            padding: 6rem 3rem;
+        }
+        .steps-header {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto 5rem;
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--color-taupe);
+            margin-bottom: 1.2rem;
+        }
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-weight: 300;
+            color: var(--color-soft-black);
+            line-height: 1.2;
+        }
+        .section-heading em { font-style: italic; }
+
+        /* Each step card */
+        .step-card {
+            max-width: 960px;
+            margin: 0 auto 4rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            border: 1px solid rgba(0,0,0,0.06);
+            background: white;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .step-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+
+        /* Alternating layout */
+        .step-card.reverse { direction: rtl; }
+        .step-card.reverse > * { direction: ltr; }
+
+        .step-illustration {
+            background: var(--color-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem;
+            position: relative;
+        }
+        .step-illustration svg {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+        }
+
+        .step-content {
+            padding: 2.8rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .step-number-tag {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: rgba(196,168,124,0.2);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--color-soft-black);
+            margin-bottom: 1.2rem;
+        }
+        .step-title em { font-style: italic; font-weight: 300; }
+        .step-desc {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+        }
+        .step-tip {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--color-gold);
+            letter-spacing: 0.02em;
+        }
+        .step-tip::before {
+            content: '✦';
+            font-size: 0.55rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== MEASUREMENT TABLE ===== */
+        .table-section {
+            background: var(--color-soft-black);
+            padding: 6rem 3rem;
+        }
+        .table-inner {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .table-section .section-label { color: var(--color-gold-light); text-align: center; }
+        .table-section .section-heading { color: white; text-align: center; margin-bottom: 3rem; }
+
+        .measure-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .measure-table th {
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            padding: 0 1.5rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .measure-table td {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            padding: 1.1rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            vertical-align: middle;
+        }
+        .measure-table tr:last-child td { border-bottom: none; }
+        .measure-table td:first-child {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 400;
+            color: white;
+        }
+        .measure-table input[type="text"] {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.5rem 0.9rem;
+            color: white;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 300;
+            width: 100px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .measure-table input[type="text"]:focus {
+            border-color: var(--color-gold);
+        }
+        .measure-table input::placeholder { color: rgba(255,255,255,0.2); }
+
+        .table-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.25);
+            line-height: 1.7;
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: var(--color-cream);
+            padding: 7rem 3rem;
+            text-align: center;
+        }
+        .cta-section .section-heading { margin-bottom: 1rem; }
+        .cta-sub {
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: white;
+            background: var(--color-gold);
+            padding: 1rem 2.2rem;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover { background: var(--color-gold-light); transform: translateY(-1px); }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.15);
+            padding: 1rem 2.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover { border-color: var(--color-gold); color: var(--color-gold); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--color-soft-black);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--color-gold); }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: rgba(253,251,249,0.97);
+                backdrop-filter: blur(12px);
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            .nav-links.open a { font-size: 0.8rem; }
+
+            .page-hero { padding: 8rem 1.5rem 4rem; }
+
+            .intro-note { padding: 3rem 1.5rem; }
+            .intro-note-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+            .steps-section { padding: 4rem 1.5rem; }
+            .step-card {
+                grid-template-columns: 1fr;
+            }
+            .step-card.reverse { direction: ltr; }
+            .step-illustration { min-height: 220px; }
+            .step-content { padding: 2rem 1.5rem; }
+
+            .table-section { padding: 4rem 1.5rem; }
+            .measure-table th, .measure-table td { padding: 0.9rem 0.8rem; }
+            .measure-table input[type="text"] { width: 80px; }
+
+            .cta-section { padding: 5rem 1.5rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+
+            footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">Federica Dal Molin</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#process">Process</a></li>
+            <li><a href="index.html#videos">Runway</a></li>
+            <li><a href="index.html#gallery">Portfolio</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="measurements.html" class="active">Measurements</a></li>
+            <li><a href="index.html#contact">Book a Consultation</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-label">Your Perfect Fit</div>
+        <h1>How to Take <em>Your Measurements</em></h1>
+        <p class="page-hero-sub">Precision is the foundation of every garment. Follow this guide to capture your measurements accurately — so Federica can create something made entirely for you.</p>
+    </section>
+
+    <!-- INTRO NOTE -->
+    <section class="intro-note">
+        <div class="intro-note-inner">
+            <div class="fade-in">
+                <div class="intro-note-label">Before You Begin</div>
+                <h2 class="intro-note-heading">A few <em>essentials</em> for accurate results</h2>
+            </div>
+            <div class="intro-note-text fade-in">
+                <p>Taking your own measurements is straightforward when done correctly. For the most accurate results, wear form-fitting underwear or a thin base layer — avoid bulky clothing that adds volume. Stand naturally upright, without tensing your muscles or holding your breath.</p>
+                <p>Ideally, ask a trusted person to assist you: it is much easier to keep the tape measure level and taut when someone else is measuring. If you are measuring yourself, use a mirror to check alignment.</p>
+                <div class="intro-note-tips">
+                    <p><strong>What you need:</strong> A soft fabric tape measure (not a metal one), a mirror, and a pencil to note down each figure. If you don't have a tape measure, a piece of string and a ruler will work as a substitute.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEPS -->
+    <section class="steps-section">
+        <div class="steps-header fade-in">
+            <div class="section-label">Step by Step</div>
+            <h2 class="section-heading">The Six <em>Measurements</em></h2>
+        </div>
+
+        <!-- 01 HEIGHT -->
+        <div class="step-card fade-in">
+            <div class="step-illustration">
+                <svg viewBox="0 0 160 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Body silhouette -->
+                    <ellipse cx="80" cy="38" rx="18" ry="18" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M62 56 Q55 80 57 110 L58 190 Q59 210 80 210 Q101 210 102 190 L103 110 Q105 80 98 56" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M63 60 Q40 75 36 110" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M97 60 Q120 75 124 110" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <!-- Foot line -->
+                    <line x1="70" y1="208" x2="90" y2="208" stroke="#A89B8C" stroke-width="1"/>
+                    <!-- Height arrow -->
+                    <line x1="140" y1="20" x2="140" y2="210" stroke="#C4A87C" stroke-width="1" stroke-dasharray="3 3"/>
+                    <line x1="134" y1="20" x2="146" y2="20" stroke="#C4A87C" stroke-width="1.5"/>
+                    <line x1="134" y1="210" x2="146" y2="210" stroke="#C4A87C" stroke-width="1.5"/>
+                    <text x="148" y="118" font-family="Georgia" font-size="9" fill="#C4A87C" font-style="italic">h</text>
+                </svg>
+            </div>
+            <div class="step-content">
+                <div class="step-number-tag">01</div>
+                <div class="step-title">Height</div>
+                <p class="step-desc">Stand barefoot on a flat floor with your back against a wall. Keep your feet together, your head level, and your gaze forward. Have someone mark the wall at the top of your head, then measure from the floor to that point. Alternatively, use a door frame or a height chart.</p>
+                <span class="step-tip">Measure in the morning — we are slightly taller before the day's activities compress the spine.</span>
+            </div>
+        </div>
+
+        <!-- 02 BUST -->
+        <div class="step-card reverse fade-in">
+            <div class="step-content">
+                <div class="step-number-tag">02</div>
+                <div class="step-title">Bust <em>/ Chest</em></div>
+                <p class="step-desc">Wrap the tape measure around the fullest part of your bust, keeping it parallel to the floor all the way around. The tape should lie flat against your body — snug but not tight. Make sure it passes across the widest point of your chest and across your shoulder blades at the back.</p>
+                <span class="step-tip">Breathe normally and measure at the end of a natural exhale for the most accurate reading.</span>
+            </div>
+            <div class="step-illustration">
+                <svg viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="80" cy="30" rx="16" ry="16" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M65 46 Q55 65 57 95 L58 160" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M95 46 Q105 65 103 95 L102 160" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M65 48 Q40 58 34 72" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M95 48 Q120 58 126 72" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <!-- Bust line -->
+                    <path d="M34 72 Q80 62 126 72" fill="none" stroke="#C4A87C" stroke-width="1.5" stroke-dasharray="4 2"/>
+                    <!-- Arrow indicators -->
+                    <circle cx="34" cy="72" r="3" fill="#C4A87C"/>
+                    <circle cx="126" cy="72" r="3" fill="#C4A87C"/>
+                    <text x="72" y="58" font-family="Georgia" font-size="9" fill="#C4A87C" font-style="italic">bust</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 03 WAIST -->
+        <div class="step-card fade-in">
+            <div class="step-illustration">
+                <svg viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="80" cy="30" rx="16" ry="16" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M65 46 Q50 68 52 95 L54 160" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M95 46 Q110 68 108 95 L106 160" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M65 48 Q40 58 34 72" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M95 48 Q120 58 126 72" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <!-- Waist curve (narrower) -->
+                    <path d="M52 95 Q80 88 108 95" fill="none" stroke="#C4A87C" stroke-width="1.5" stroke-dasharray="4 2"/>
+                    <circle cx="52" cy="95" r="3" fill="#C4A87C"/>
+                    <circle cx="108" cy="95" r="3" fill="#C4A87C"/>
+                    <text x="72" y="84" font-family="Georgia" font-size="9" fill="#C4A87C" font-style="italic">waist</text>
+                </svg>
+            </div>
+            <div class="step-content">
+                <div class="step-number-tag">03</div>
+                <div class="step-title">Waist</div>
+                <p class="step-desc">Locate your natural waist — the narrowest point of your torso, usually about 2–3 cm above your navel. Wrap the tape measure around this point, keeping it level and parallel to the floor. The tape should be comfortably snug, not pulling in the skin.</p>
+                <span class="step-tip">Bend gently to one side — the crease that forms marks your natural waist precisely.</span>
+            </div>
+        </div>
+
+        <!-- 04 HIPS -->
+        <div class="step-card reverse fade-in">
+            <div class="step-content">
+                <div class="step-number-tag">04</div>
+                <div class="step-title">Hips</div>
+                <p class="step-desc">Stand with your feet together. Wrap the tape around the widest part of your hips and seat, typically about 20–23 cm below the natural waist. Ensure the tape is parallel to the floor and passes over the fullest point of the buttocks at the back. Keep the tape snug but not tight.</p>
+                <span class="step-tip">Check in a mirror from the side to confirm the tape is perfectly horizontal all the way around.</span>
+            </div>
+            <div class="step-illustration">
+                <svg viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="80" cy="28" rx="15" ry="15" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M66 43 Q50 65 48 90 Q46 110 50 120 L54 180" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M94 43 Q110 65 112 90 Q114 110 110 120 L106 180" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M66 45 Q38 55 32 68" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M94 45 Q122 55 128 68" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <!-- Hip line (widest) -->
+                    <path d="M50 120 Q80 112 110 120" fill="none" stroke="#C4A87C" stroke-width="1.5" stroke-dasharray="4 2"/>
+                    <circle cx="50" cy="120" r="3" fill="#C4A87C"/>
+                    <circle cx="110" cy="120" r="3" fill="#C4A87C"/>
+                    <text x="72" y="109" font-family="Georgia" font-size="9" fill="#C4A87C" font-style="italic">hips</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- 05 SHOULDER WIDTH -->
+        <div class="step-card fade-in">
+            <div class="step-illustration">
+                <svg viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="90" cy="38" rx="17" ry="17" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M74 54 Q58 65 38 68" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M106 54 Q122 65 142 68" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M74 56 Q80 75 80 110 L80 150" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M106 56 Q100 75 100 110 L100 150" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <!-- Shoulder span line -->
+                    <line x1="38" y1="62" x2="142" y2="62" stroke="#C4A87C" stroke-width="1.5" stroke-dasharray="4 2"/>
+                    <circle cx="38" cy="62" r="3" fill="#C4A87C"/>
+                    <circle cx="142" cy="62" r="3" fill="#C4A87C"/>
+                    <!-- Arrow labels -->
+                    <line x1="38" y1="48" x2="38" y2="74" stroke="#C4A87C" stroke-width="1"/>
+                    <line x1="142" y1="48" x2="142" y2="74" stroke="#C4A87C" stroke-width="1"/>
+                    <text x="76" y="55" font-family="Georgia" font-size="9" fill="#C4A87C" font-style="italic">shoulders</text>
+                </svg>
+            </div>
+            <div class="step-content">
+                <div class="step-number-tag">05</div>
+                <div class="step-title">Shoulder <em>Width</em></div>
+                <p class="step-desc">With a relaxed, natural posture, measure from the outer edge of one shoulder to the outer edge of the other — across the back. The starting and ending points are where the shoulder meets the arm (the shoulder seam point). Keep the tape straight across, not following the curve of the neck.</p>
+                <span class="step-tip">This measurement is best taken by a second person, as it is difficult to reach and hold the tape accurately on your own.</span>
+            </div>
+        </div>
+
+        <!-- 06 INSEAM -->
+        <div class="step-card reverse fade-in">
+            <div class="step-content">
+                <div class="step-number-tag">06</div>
+                <div class="step-title">Inseam <em>/ Inside Leg</em></div>
+                <p class="step-desc">Stand with your feet slightly apart. Place the tape measure at the top of your inner thigh, right at the crotch seam, and measure straight down to the floor (or to your preferred trouser length). For most custom trousers, measuring to the ankle bone is a good reference point.</p>
+                <span class="step-tip">Wear the shoes you plan to wear with the garment for the most accurate hem length.</span>
+            </div>
+            <div class="step-illustration">
+                <svg viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="80" cy="28" rx="15" ry="15" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M66 43 Q55 65 54 88" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M94 43 Q105 65 106 88" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M66 45 Q42 55 36 68" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M94 45 Q118 55 124 68" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <!-- Legs -->
+                    <path d="M54 88 Q50 130 52 175 Q53 195 62 200" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <path d="M106 88 Q110 130 108 175 Q107 195 98 200" fill="none" stroke="#A89B8C" stroke-width="1.5"/>
+                    <!-- Inseam line -->
+                    <line x1="80" y1="88" x2="80" y2="200" stroke="#C4A87C" stroke-width="1.5" stroke-dasharray="4 2"/>
+                    <circle cx="80" cy="88" r="3" fill="#C4A87C"/>
+                    <line x1="74" y1="200" x2="86" y2="200" stroke="#C4A87C" stroke-width="1.5"/>
+                    <text x="86" y="148" font-family="Georgia" font-size="9" fill="#C4A87C" font-style="italic">inseam</text>
+                </svg>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- MEASUREMENT TABLE -->
+    <section class="table-section">
+        <div class="table-inner">
+            <div class="section-label fade-in">Your Numbers</div>
+            <h2 class="section-heading fade-in">Fill in Your <em>Measurements</em></h2>
+            <table class="measure-table fade-in">
+                <thead>
+                    <tr>
+                        <th>Measurement</th>
+                        <th>Your Size (cm)</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Height</td>
+                        <td><input type="text" placeholder="e.g. 168"></td>
+                        <td style="color:rgba(255,255,255,0.3); font-size:0.72rem;">Barefoot, standing straight</td>
+                    </tr>
+                    <tr>
+                        <td>Bust / Chest</td>
+                        <td><input type="text" placeholder="e.g. 88"></td>
+                        <td style="color:rgba(255,255,255,0.3); font-size:0.72rem;">Fullest point, tape level</td>
+                    </tr>
+                    <tr>
+                        <td>Waist</td>
+                        <td><input type="text" placeholder="e.g. 68"></td>
+                        <td style="color:rgba(255,255,255,0.3); font-size:0.72rem;">Natural waist, above navel</td>
+                    </tr>
+                    <tr>
+                        <td>Hips</td>
+                        <td><input type="text" placeholder="e.g. 96"></td>
+                        <td style="color:rgba(255,255,255,0.3); font-size:0.72rem;">Widest point of seat</td>
+                    </tr>
+                    <tr>
+                        <td>Shoulder Width</td>
+                        <td><input type="text" placeholder="e.g. 38"></td>
+                        <td style="color:rgba(255,255,255,0.3); font-size:0.72rem;">Shoulder point to shoulder point</td>
+                    </tr>
+                    <tr>
+                        <td>Inseam</td>
+                        <td><input type="text" placeholder="e.g. 76"></td>
+                        <td style="color:rgba(255,255,255,0.3); font-size:0.72rem;">Crotch to floor</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-note">This table is for your personal reference only. Share your measurements directly with Federica via WhatsApp or email when you get in touch.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="section-label fade-in">Ready?</div>
+        <h2 class="section-heading fade-in">Let's Start <em>Creating</em></h2>
+        <p class="cta-sub fade-in">Once you have your measurements, reach out to Federica to begin your made-to-measure journey. She will guide you through the rest.</p>
+        <div class="cta-buttons fade-in">
+            <a href="https://wa.me/393662582450?text=Hi%20Federica%2C%20I%20have%20my%20measurements%20ready%20and%20I%E2%80%99d%20love%20to%20discuss%20a%20made-to-measure%20piece." class="btn-primary" target="_blank">
+                Send Measurements via WhatsApp
+            </a>
+            <a href="index.html" class="btn-outline">
+                ← Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">Federica Dal Molin Atelier</div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="mailto:dalmolinfederica.fdm@gmail.com">Email</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks   = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+        navLinks.querySelectorAll('a').forEach(link =>
+            link.addEventListener('click', () => navLinks.classList.remove('open'))
+        );
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

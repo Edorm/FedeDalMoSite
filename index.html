@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federica Dal Molin Atelier — Made-to-Measure Fashion, Dubai</title>
+    <meta name="description" content="Bespoke luxury fashion designed and tailored for you. Made-to-measure evening gowns, cocktail dresses, and elegant apparel by Italian designer Federica Dal Molin, based in Dubai.">
+    <!-- Fix YouTube Errore 153: forza referrer policy corretta -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #F5F0EB;
+            --color-warm-white: #FDFBF9;
+            --color-charcoal: #2C2C2C;
+            --color-soft-black: #1A1A1A;
+            --color-taupe: #A89B8C;
+            --color-gold: #C4A87C;
+            --color-gold-light: #D4BE9C;
+            --color-text: #3A3A3A;
+            --color-text-light: #6B6B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Montserrat', Helvetica, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-warm-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.4s ease, padding 0.4s ease;
+        }
+        nav.scrolled {
+            background: rgba(253, 251, 249, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 1rem 3rem;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+        }
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--color-soft-black);
+            text-decoration: none;
+        }
+        nav.hero-visible .nav-logo { color: white; }
+        nav.scrolled .nav-logo { color: var(--color-soft-black); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-soft-black);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        nav.hero-visible .nav-links a { color: rgba(255,255,255,0.85); }
+        nav.scrolled .nav-links a { color: var(--color-text); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1px;
+            background: var(--color-gold);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 24px; height: 1px;
+            background: var(--color-soft-black);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+        nav.hero-visible .menu-toggle span { background: white; }
+        nav.scrolled .menu-toggle span { background: var(--color-soft-black); }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+        .hero-bg { position: absolute; inset: 0; background: var(--color-charcoal); }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.05) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 3rem 6rem;
+            max-width: 750px;
+            animation: heroFadeIn 1.2s ease forwards;
+        }
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-tagline {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--color-gold-light);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 em { font-style: italic; font-weight: 300; }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.75);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: white;
+            background: var(--color-gold);
+            border: none;
+            padding: 1rem 2.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover { background: var(--color-gold-light); transform: translateY(-1px); }
+        .btn-primary svg { width: 16px; height: 16px; }
+
+        /* ===== SECTIONS COMMON ===== */
+        section { padding: 7rem 3rem; }
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--color-taupe);
+            margin-bottom: 1.5rem;
+        }
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.25;
+            color: var(--color-soft-black);
+            margin-bottom: 2rem;
+        }
+        .section-heading em { font-style: italic; }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--color-cream); }
+        .about-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .about-image {
+            aspect-ratio: 3/4;
+            background: var(--color-taupe);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-text p {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+        }
+        .about-credentials {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            gap: 3rem;
+        }
+        .credential { display: flex; flex-direction: column; gap: 0.3rem; }
+        .credential-number {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--color-gold);
+        }
+        .credential-label {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        /* ===== PROCESS ===== */
+        .process { background: var(--color-warm-white); }
+        .process-header {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .process-steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .step { text-align: center; padding: 2rem 1rem; position: relative; }
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--color-gold-light);
+            margin-bottom: 1.2rem;
+            line-height: 1;
+        }
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--color-soft-black);
+            margin-bottom: 0.8rem;
+        }
+        .step-desc {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--color-text-light);
+        }
+        .step + .step::before {
+            content: '';
+            position: absolute;
+            left: -1rem; top: 3.5rem;
+            height: 1px; width: 2rem;
+            background: var(--color-gold-light);
+            opacity: 0.5;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .videos {
+            background: var(--color-cream);
+            padding: 7rem 3rem;
+        }
+        .videos-header {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .videos-header p {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--color-text-light);
+        }
+        .videos-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Card video */
+        .video-card {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            background: var(--color-charcoal);
+        }
+        .video-thumb {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+        .video-thumb img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, filter 0.4s ease;
+            filter: brightness(0.85);
+        }
+        .video-card:hover .video-thumb img {
+            transform: scale(1.04);
+            filter: brightness(0.6);
+        }
+        .video-thumb::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.05) 60%);
+            pointer-events: none;
+        }
+
+        /* Pulsante play */
+        .play-btn {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            border: 1.5px solid rgba(255,255,255,0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            z-index: 2;
+            backdrop-filter: blur(4px);
+        }
+        .play-btn svg {
+            width: 18px; height: 18px;
+            fill: white;
+            margin-left: 3px;
+        }
+        .video-card:hover .play-btn {
+            background: var(--color-gold);
+            border-color: var(--color-gold);
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Info sotto il thumb */
+        .video-info {
+            padding: 1.2rem 1.4rem 1.5rem;
+            background: var(--color-soft-black);
+        }
+        .video-label {
+            font-family: var(--font-body);
+            font-size: 0.58rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 0.4rem;
+        }
+        .video-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: white;
+            line-height: 1.3;
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .lightbox-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(10,8,6,0.92);
+            backdrop-filter: blur(6px);
+        }
+        .lightbox-inner {
+            position: relative;
+            z-index: 2;
+            width: 90vw;
+            max-width: 1000px;
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.35s ease;
+        }
+        .lightbox.active .lightbox-inner {
+            transform: translateY(0) scale(1);
+        }
+        .lightbox-video-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: black;
+        }
+        .lightbox-video-wrap iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -2.8rem; right: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.2s ease;
+        }
+        .lightbox-close:hover { color: white; }
+        .lightbox-close svg {
+            width: 14px; height: 14px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+        }
+        .lightbox-caption {
+            margin-top: 1.2rem;
+            text-align: center;
+        }
+        .lightbox-caption span {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 300;
+            font-style: italic;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            background: var(--color-soft-black);
+            padding: 7rem 0;
+        }
+        .gallery .section-label { color: var(--color-gold-light); text-align: center; }
+        .gallery .section-heading { color: white; text-align: center; }
+        .gallery-header { padding: 0 3rem; margin-bottom: 3rem; }
+
+        :root {
+            --gap: 0.75rem;
+            --side: 2rem;
+            --col-width: calc((100vw - (var(--side) * 2) - (var(--gap) * 5)) / 6);
+            --row-height: calc(var(--col-width) * 4 / 3);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(6, var(--col-width));
+            grid-template-rows: repeat(5, var(--row-height));
+            gap: var(--gap);
+            margin: 0 var(--side);
+            width: calc(100vw - (var(--side) * 2));
+        }
+        .gallery-item {
+            background-color: var(--color-charcoal);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-item:hover { opacity: 0.85; }
+        .gallery-item.big-1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+        .gallery-item.big-2 { grid-column: 4 / 6; grid-row: 2 / 3; }
+        .gallery-item.big-3 { grid-column: 3 / 4; grid-row: 3 / 6; }
+        .gallery-item.big-4 { grid-column: 5 / 7; grid-row: 4 / 6; }
+        .gallery-item.s-1  { grid-column: 3; grid-row: 1; }
+        .gallery-item.s-2  { grid-column: 4; grid-row: 1; }
+        .gallery-item.s-3  { grid-column: 5; grid-row: 1; }
+        .gallery-item.s-4  { grid-column: 6; grid-row: 1; }
+        .gallery-item.s-5  { grid-column: 3; grid-row: 2; }
+        .gallery-item.s-6  { grid-column: 6; grid-row: 2; }
+        .gallery-item.s-7  { grid-column: 1; grid-row: 3; }
+        .gallery-item.s-8  { grid-column: 2; grid-row: 3; }
+        .gallery-item.s-9  { grid-column: 4; grid-row: 3; }
+        .gallery-item.s-10 { grid-column: 5; grid-row: 3; }
+        .gallery-item.s-11 { grid-column: 6; grid-row: 3; }
+        .gallery-item.s-12 { grid-column: 1; grid-row: 4; }
+        .gallery-item.s-13 { grid-column: 2; grid-row: 4; }
+        .gallery-item.s-14 { grid-column: 4; grid-row: 4; }
+        .gallery-item.s-15 { grid-column: 1; grid-row: 5; }
+        .gallery-item.s-16 { grid-column: 2; grid-row: 5; }
+        .gallery-item.s-17 { grid-column: 4; grid-row: 5; }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--color-cream); }
+        .services-inner { max-width: 1000px; margin: 0 auto; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .service-card {
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(0,0,0,0.06);
+            background: var(--color-warm-white);
+            transition: box-shadow 0.3s ease;
+        }
+        .service-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+        .service-icon {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--color-gold);
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--color-soft-black);
+            margin-bottom: 0.8rem;
+        }
+        .service-desc {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--color-text-light);
+        }
+
+        /* ===== PRESS ===== */
+        .press { background: var(--color-warm-white); text-align: center; }
+        .press-quote {
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--color-soft-black);
+        }
+        .press-logos {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            opacity: 0.4;
+        }
+        .press-logo {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: var(--color-soft-black);
+            text-align: center;
+            padding: 8rem 3rem;
+        }
+        .contact .section-label { color: var(--color-gold-light); }
+        .contact .section-heading { color: white; max-width: 600px; margin: 0 auto 1.5rem; }
+        .contact-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.55);
+            max-width: 480px;
+            margin: 0 auto 3rem;
+        }
+        .contact-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: white;
+            background: #25D366;
+            border: none;
+            padding: 1rem 2.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn-whatsapp:hover { background: #20BD5A; transform: translateY(-1px); }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1rem 2.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover { border-color: rgba(255,255,255,0.5); color: white; }
+        .contact-note {
+            margin-top: 2.5rem;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--color-soft-black);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--color-gold); }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            nav { padding: 1.2rem 1.5rem; }
+            nav.scrolled { padding: 0.8rem 1.5rem; }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: rgba(253,251,249,0.97);
+                backdrop-filter: blur(12px);
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            .nav-links.open a { color: var(--color-text) !important; font-size: 0.8rem; }
+
+            section { padding: 4rem 1.5rem; }
+            .videos { padding: 4rem 1.5rem; }
+            .hero-content { padding: 0 1.5rem 4rem; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-image { max-height: 450px; }
+            .about-credentials { gap: 2rem; }
+
+            .process-steps { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .step + .step::before { display: none; }
+
+            .videos-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: none;
+                grid-auto-rows: calc((100vw - 1rem - 0.75rem) / 2 * 4 / 3);
+                width: auto;
+                margin: 0 0.5rem;
+            }
+            .gallery-item.big-1,.gallery-item.big-2,.gallery-item.big-3,.gallery-item.big-4,
+            .gallery-item.s-1,.gallery-item.s-2,.gallery-item.s-3,.gallery-item.s-4,
+            .gallery-item.s-5,.gallery-item.s-6,.gallery-item.s-7,.gallery-item.s-8,
+            .gallery-item.s-9,.gallery-item.s-10,.gallery-item.s-11,.gallery-item.s-12,
+            .gallery-item.s-13,.gallery-item.s-14,.gallery-item.s-15,.gallery-item.s-16,
+            .gallery-item.s-17 { grid-column: unset; grid-row: unset; }
+
+            .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .press-logos { gap: 1.5rem; flex-wrap: wrap; }
+            footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+
+            .lightbox-inner { width: 96vw; }
+            .lightbox-close { top: -2.2rem; font-size: 0.6rem; }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 { font-size: 2.2rem; }
+            .process-steps { grid-template-columns: 1fr; }
+            .contact-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <!-- MODIFICA 1: aggiunto link "Measurements" che punta a measurements.html -->
+    <nav class="hero-visible" id="navbar">
+        <a href="#" class="nav-logo">Federica Dal Molin</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#videos">Runway</a></li>
+            <li><a href="#gallery">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="measurements.html">Measurements</a></li>
+            <li><a href="#contact">Book a Consultation</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" style="background: url('images/hero.jpeg') center/cover no-repeat;"></div>
+        <div class="hero-content">
+            <div class="hero-tagline">Made-to-Measure &middot; Dubai</div>
+            <h1>Fashion Designed <em>Around You</em></h1>
+            <p class="hero-subtitle">Italian craftsmanship meets your personal vision. Bespoke evening gowns, cocktail dresses, and luxury apparel — designed and tailored exclusively for you, wherever you are in Dubai.</p>
+            <a href="https://wa.me/393662582450?text=Hi%20Federica%2C%20I%E2%80%99d%20love%20to%20discuss%20a%20made-to-measure%20piece." class="btn-primary" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.37 0-4.567-.804-6.31-2.152l-.44-.352-3.2 1.073 1.073-3.2-.352-.44A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                Message on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-image fade-in" style="background: url('images/portrait.jpg') center/cover no-repeat;"></div>
+            <div class="about-text fade-in">
+                <div class="section-label">The Designer</div>
+                <h2 class="section-heading">Where Italian Tradition Meets <em>Modern Elegance</em></h2>
+                <p>Federica Dal Molin is an Italian fashion designer based in Dubai, specializing in made-to-measure luxury garments. Trained at Milan's Academy of Fine Arts of Brera, she brings a rigorous foundation in pattern-cutting, fabric innovation, and silhouette research to every piece she creates.</p>
+                <p>Her work has been showcased at Milan Fashion Week, recognized with the Lineapelle Young Designers Edition award, and featured in international fashion publications. With experience spanning renowned Italian fashion houses and bespoke ateliers, she has honed a distinctive approach: merging traditional craftsmanship with a contemporary, wearable sensibility.</p>
+                <p>Today, Federica works one-on-one with clients across Dubai, designing garments that are as unique as the women who wear them — from evening gowns and cocktail dresses to tailored separates for every occasion that matters.</p>
+                <div class="about-credentials">
+                    <div class="credential">
+                        <span class="credential-number">MFW</span>
+                        <span class="credential-label">Milan Fashion Week</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-number">Brera</span>
+                        <span class="credential-label">M.A. Fashion Design</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-number">Award</span>
+                        <span class="credential-label">Lineapelle Young Designers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="process-header fade-in">
+            <div class="section-label">How It Works</div>
+            <h2 class="section-heading">Your Garment, <em>Your Journey</em></h2>
+            <p style="font-size:0.85rem; font-weight:300; line-height:1.7; color:var(--color-text-light);">Every piece begins with a conversation. Federica comes to you — at your home, office, or a location of your choice — to ensure a seamless, personal experience from start to finish.</p>
+        </div>
+        <div class="process-steps">
+            <div class="step fade-in">
+                <div class="step-number">01</div>
+                <div class="step-title">Consultation</div>
+                <div class="step-desc">A personal meeting to understand your style, occasion, and vision. Together you explore fabrics, silhouettes, and details.</div>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">02</div>
+                <div class="step-title">Design</div>
+                <div class="step-desc">Federica develops sketches and selects materials tailored to your brief — from Italian silks to innovative textiles.</div>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">03</div>
+                <div class="step-title">Fitting</div>
+                <div class="step-desc">Precise measurements and fittings at your location. Every seam, drape, and proportion is refined to your body.</div>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">04</div>
+                <div class="step-title">Delivery</div>
+                <div class="step-desc">Your finished piece, crafted with care and delivered to you — ready for the moment it was made for.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         SEZIONE VIDEO
+         Come aggiungere i tuoi video YouTube:
+
+         1. Apri il video su YouTube
+         2. Copia l'ID dalla URL:
+            https://www.youtube.com/watch?v=QUESTO_È_L_ID
+            oppure https://youtu.be/QUESTO_È_L_ID
+         3. In ogni .video-card qui sotto sostituisci:
+            - data-video-id="..."   → il tuo ID
+            - data-video-title="..."→ il titolo del video
+            - il testo di .video-label e .video-title
+            - l'src del tag <img> con:
+              https://img.youtube.com/vi/IL_TUO_ID/maxresdefault.jpg
+    ===================================================== -->
+    <section class="videos" id="videos">
+        <div class="videos-header fade-in">
+            <div class="section-label">On the Runway</div>
+            <h2 class="section-heading">In <em>Motion</em></h2>
+            <p>A glimpse behind the collection — from the atelier to the runway.</p>
+        </div>
+
+        <div class="videos-grid">
+
+            <!-- VIDEO 1 -->
+            <div class="video-card fade-in"
+                 data-video-id="FuoyXLZXYB0"
+                 data-video-title="Collection SS 2024 — Milan">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/FuoyXLZXYB0/maxresdefault.jpg"
+                         onerror="this.src='https://placehold.co/640x360/2C2C2C/C4A87C?text=Video+1'"
+                         alt="Collection SS 2024">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div class="video-label">Spring / Summer 2024</div>
+                    <div class="video-title">Collection SS 2024 — Milan</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 2 ─ sostituisci YOUR_VIDEO_ID_2 con il tuo ID YouTube -->
+            <div class="video-card fade-in"
+                 data-video-id="YOUR_VIDEO_ID_2"
+                 data-video-title="Runway Show — Dubai">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID_2/maxresdefault.jpg"
+                         onerror="this.src='https://placehold.co/640x360/2C2C2C/C4A87C?text=Video+2'"
+                         alt="Runway Show Dubai">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div class="video-label">Runway 2023</div>
+                    <div class="video-title">Runway Show — Dubai</div>
+                </div>
+            </div>
+
+            <!-- VIDEO 3 ─ sostituisci YOUR_VIDEO_ID_3 con il tuo ID YouTube -->
+            <div class="video-card fade-in"
+                 data-video-id="YOUR_VIDEO_ID_3"
+                 data-video-title="Atelier — The Making Of">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID_3/maxresdefault.jpg"
+                         onerror="this.src='https://placehold.co/640x360/2C2C2C/C4A87C?text=Video+3'"
+                         alt="Behind the Scenes">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div class="video-label">Behind the Scenes</div>
+                    <div class="video-title">Atelier — The Making Of</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-inner">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi video">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                Close
+            </button>
+            <div class="lightbox-video-wrap">
+                <!-- MODIFICA 2: aggiunto referrerpolicy per risolvere Errore 153 YouTube -->
+                <iframe id="lightboxIframe"
+                    src=""
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    title="Video player">
+                </iframe>
+            </div>
+            <div class="lightbox-caption">
+                <span id="lightboxCaption"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-header">
+            <div class="section-label fade-in">Portfolio</div>
+            <h2 class="section-heading fade-in">Selected <em>Creations</em></h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item big-1 fade-in" style="background-image: url('images/gallery-1.jpeg');"></div>
+            <div class="gallery-item big-2 fade-in" style="background-image: url('images/gallery-2.jpeg');"></div>
+            <div class="gallery-item big-3 fade-in" style="background-image: url('images/gallery-3.jpeg');"></div>
+            <div class="gallery-item big-4 fade-in" style="background-image: url('images/gallery-4.jpeg');"></div>
+            <div class="gallery-item s-1  fade-in" style="background-image: url('images/gallery-5.jpeg');"></div>
+            <div class="gallery-item s-2  fade-in" style="background-image: url('images/gallery-6.jpeg');"></div>
+            <div class="gallery-item s-3  fade-in" style="background-image: url('images/gallery-7.jpeg');"></div>
+            <div class="gallery-item s-4  fade-in" style="background-image: url('images/gallery-8.jpeg');"></div>
+            <div class="gallery-item s-5  fade-in" style="background-image: url('images/gallery-9.jpeg');"></div>
+            <div class="gallery-item s-6  fade-in" style="background-image: url('images/gallery-10.jpeg');"></div>
+            <div class="gallery-item s-7  fade-in" style="background-image: url('images/gallery-11.jpeg');"></div>
+            <div class="gallery-item s-8  fade-in" style="background-image: url('images/gallery-12.jpeg');"></div>
+            <div class="gallery-item s-9  fade-in" style="background-image: url('images/gallery-13.jpeg');"></div>
+            <div class="gallery-item s-10 fade-in" style="background-image: url('images/gallery-14.jpeg');"></div>
+            <div class="gallery-item s-11 fade-in" style="background-image: url('images/gallery-15.jpeg');"></div>
+            <div class="gallery-item s-12 fade-in" style="background-image: url('images/gallery-16.jpeg');"></div>
+            <div class="gallery-item s-13 fade-in" style="background-image: url('images/gallery-17.jpeg');"></div>
+            <div class="gallery-item s-14 fade-in" style="background-image: url('images/gallery-18.jpeg');"></div>
+            <div class="gallery-item s-15 fade-in" style="background-image: url('images/gallery-19.jpeg');"></div>
+            <div class="gallery-item s-16 fade-in" style="background-image: url('images/gallery-20.jpeg');"></div>
+            <div class="gallery-item s-17 fade-in" style="background-image: url('images/gallery-21.jpeg');"></div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="services-inner">
+            <div class="fade-in" style="text-align:center; max-width:600px; margin:0 auto 1rem;">
+                <div class="section-label">Services</div>
+                <h2 class="section-heading">Crafted for <em>Every Occasion</em></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">I</div>
+                    <div class="service-title">Evening Gowns</div>
+                    <div class="service-desc">Statement pieces for galas, formal dinners, and special events — designed to make you feel extraordinary.</div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">II</div>
+                    <div class="service-title">Cocktail & Event</div>
+                    <div class="service-desc">Refined dresses and separates for celebrations, launches, and every occasion that calls for something special.</div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">III</div>
+                    <div class="service-title">Bespoke Tailoring</div>
+                    <div class="service-desc">Custom blazers, trousers, and coordinated ensembles — precision-cut and tailored to your measurements.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESS -->
+    <section class="press fade-in">
+        <div class="section-label">As Seen In</div>
+        <p class="press-quote">"Fashion is not just about clothing — it's about creating a second skin that tells your story."</p>
+        <div class="press-logos">
+            <span class="press-logo">Milan Fashion Week</span>
+            <span class="press-logo">Lineapelle</span>
+            <span class="press-logo">Selin Magazine</span>
+            <span class="press-logo">Goji Magazine</span>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="section-label fade-in">Get in Touch</div>
+        <h2 class="section-heading fade-in">Let's Create Something <em>Beautiful</em></h2>
+        <p class="contact-subtitle fade-in">Whether you have a clear vision or just a feeling — reach out and let's start the conversation. Consultations are complimentary and take place at a location of your choice across Dubai.</p>
+        <div class="contact-buttons fade-in">
+            <a href="https://wa.me/393662582450?text=Hi%20Federica%2C%20I%E2%80%99d%20love%20to%20discuss%20a%20made-to-measure%20piece." class="btn-whatsapp" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.37 0-4.567-.804-6.31-2.152l-.44-.352-3.2 1.073 1.073-3.2-.352-.44A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                Message on WhatsApp
+            </a>
+            <a href="mailto:dalmolinfederica.fdm@gmail.com?subject=Made-to-Measure%20Inquiry" class="btn-secondary" target="_blank">
+                Send an Email
+            </a>
+        </div>
+        <p class="contact-note">Based in Dubai &middot; Consultations across the city &middot; Italian craftsmanship</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">Federica Dal Molin Atelier</div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="mailto:dalmolinfederica.fdm@gmail.com">Email</a>
+        </div>
+    </footer>
+
+    <script>
+        // ── Navbar scroll ─────────────────────────────────────────
+        const navbar = document.getElementById('navbar');
+        const hero   = document.getElementById('hero');
+        function updateNav() {
+            const heroBottom = hero.getBoundingClientRect().bottom;
+            if (heroBottom <= 60) {
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('hero-visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.add('hero-visible');
+            }
+        }
+        window.addEventListener('scroll', updateNav);
+        updateNav();
+
+        // ── Mobile menu ───────────────────────────────────────────
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks   = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+        navLinks.querySelectorAll('a').forEach(link =>
+            link.addEventListener('click', () => navLinks.classList.remove('open'))
+        );
+
+        // ── Scroll reveal ─────────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ── Lightbox ──────────────────────────────────────────────
+        const lightbox         = document.getElementById('lightbox');
+        const lightboxIframe   = document.getElementById('lightboxIframe');
+        const lightboxCaption  = document.getElementById('lightboxCaption');
+        const lightboxClose    = document.getElementById('lightboxClose');
+        const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+        function openLightbox(videoId, title) {
+            lightboxIframe.src =
+                `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            lightboxCaption.textContent = title;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => { lightboxIframe.src = ''; }, 350);
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.video-card').forEach(card => {
+            card.addEventListener('click', () => {
+                openLightbox(card.dataset.videoId, card.dataset.videoTitle);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxBackdrop.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+</html>
